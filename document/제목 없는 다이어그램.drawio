@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
 <mxfile host="app.diagrams.net" modified="2024-01-31T06:20:59.122Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="BEDmiCFCY3No4HoJKWRa" version="23.0.2" type="github">
+=======
+<<<<<<< HEAD
+<mxfile host="app.diagrams.net" modified="2024-01-31T06:22:00.300Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="DwqbPYxWaUtm_K9DG4MI" version="23.0.2" type="github">
+=======
+<mxfile host="app.diagrams.net" modified="2024-01-31T04:55:44.689Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" version="23.0.2" etag="XMfxDw4OvXfok-mrPDqe" type="github">
+>>>>>>> parent of d800828 (use-case)
+>>>>>>> Stashed changes
   <diagram name="페이지-1" id="dR7AV8ZPimmhr0R98upe">
-    <mxGraphModel dx="1354" dy="1042" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel>
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+<<<<<<< HEAD
         <mxCell id="Dzt7Ekhi85eLiR0Chpl3-1" value="이용자" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="-204" y="-300" width="30" height="60" as="geometry" />
         </mxCell>
@@ -117,6 +126,8 @@
         <mxCell id="Dzt7Ekhi85eLiR0Chpl3-34" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="Dzt7Ekhi85eLiR0Chpl3-32" target="Dzt7Ekhi85eLiR0Chpl3-32">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+=======
+>>>>>>> parent of d800828 (use-case)
       </root>
     </mxGraphModel>
   </diagram>
