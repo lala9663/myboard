@@ -35,7 +35,6 @@ class ArticleControllerTest {
         // Then
     }
 
-    @Disabled("구현중")
     @DisplayName("[view][GET] 게시글 상세 페이지 - 정상 호출")
     @Test
     public void given_whenList_then() throws Exception {
@@ -45,8 +44,8 @@ class ArticleControllerTest {
         mvc.perform(get("/articles/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
-                .andExpect(view().name("articles/details"))
-                .andExpect(model().attributeExists("articles"))
+                .andExpect(view().name("articles/detail"))
+                .andExpect(model().attributeExists("article"))
                 .andExpect(model().attributeExists("articleComments"));
 
         // Then
