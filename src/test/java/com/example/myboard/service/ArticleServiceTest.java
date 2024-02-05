@@ -4,7 +4,6 @@ import com.example.myboard.domain.Article;
 import com.example.myboard.domain.UserAccount;
 import com.example.myboard.domain.type.SearchType;
 import com.example.myboard.dto.ArticleDto;
-import com.example.myboard.dto.ArticleUpdateDto;
 import com.example.myboard.dto.ArticleWithCommentsDto;
 import com.example.myboard.dto.UserAccountDto;
 import com.example.myboard.repository.ArticleRepository;
@@ -57,14 +56,14 @@ class ArticleServiceTest {
         SearchType searchType = SearchType.TITLE;
         String searchKeyword = "title";
         Pageable pageable = Pageable.ofSize(20);
-        given(articleRepository.findByTitle(searchKeyword, pageable)).willReturn(Page.empty());
+        given(articleRepository.findByTitleContaining(searchKeyword, pageable)).willReturn(Page.empty());
 
         // When
         Page<ArticleDto> articles = sut.searchArticles(searchType, searchKeyword, pageable);
 
         // Then
         assertThat(articles).isEmpty();
-        then(articleRepository).should().findByTitle(searchKeyword, pageable);
+        then(articleRepository).should().findByTitleContaining(searchKeyword, pageable);
     }
 
     @DisplayName("게시글을 조회하면, 게시글을 반환한다.")

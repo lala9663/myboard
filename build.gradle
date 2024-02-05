@@ -65,3 +65,7 @@ tasks.withType(JavaCompile) {
 clean.doLast {
     file(querydslDir).deleteDir()
 }
+
+compileJava {
+    options.compilerArgs << '-parameters'
+}
