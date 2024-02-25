@@ -4,6 +4,7 @@ import com.example.myboard.domain.Article;
 import com.example.myboard.domain.ArticleComment;
 import com.example.myboard.domain.UserAccount;
 import com.example.myboard.dto.ArticleCommentDto;
+import com.example.myboard.dto.ArticleDto;
 import com.example.myboard.dto.UserAccountDto;
 import com.example.myboard.repository.ArticleCommentRepository;
 import com.example.myboard.repository.ArticleRepository;
@@ -14,6 +15,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.time.LocalDateTime;
 import java.util.List;
