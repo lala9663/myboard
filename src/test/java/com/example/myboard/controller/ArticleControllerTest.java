@@ -1,11 +1,12 @@
 package com.example.myboard.controller;
 
 import com.example.myboard.config.SecurityConfig;
-import com.example.myboard.domain.type.SearchType;
+import com.example.myboard.domain.constant.SearchType;
 import com.example.myboard.dto.ArticleWithCommentsDto;
 import com.example.myboard.dto.UserAccountDto;
 import com.example.myboard.service.ArticleService;
 import com.example.myboard.service.PaginationService;
+import com.example.myboard.util.FormDataEncoder;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,16 +32,21 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 컨트롤러 - 게시글")
-@Import(SecurityConfig.class)
+@Import({SecurityConfig.class, FormDataEncoder.class})
 @WebMvcTest(ArticleController.class)
 class ArticleControllerTest {
     private final MockMvc mvc;
+    private final FormDataEncoder formDataEncoder;
+
     @MockBean private ArticleService articleService;
     @MockBean private PaginationService paginationService;
-    public ArticleControllerTest(@Autowired MockMvc mvc) {
+    public ArticleControllerTest(
+            @Autowired MockMvc mvc,
+            @Autowired FormDataEncoder formDataEncoder
+    ) {
         this.mvc = mvc;
-    }
-    @DisplayName("[view][GET] 게시글 리스트 (게시판) 페이지 - 정상 호출")
+        this.formDataEncoder = formDataEncoder;
+    }    @DisplayName("[view][GET] 게시글 리스트 (게시판) 페이지 - 정상 호출")
     @Test
     public void givenNothing_whenRequestingArticlesView_thenReturnsArticlesView() throws Exception {
         // Given

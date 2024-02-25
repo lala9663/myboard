@@ -1,4 +1,4 @@
-package com.example.myboard.domain.type;
+package com.example.myboard.domain.constant;
 
 public enum SearchType {
     TITLE, CONTENT, ID, NICKNAME, HASHTAG
