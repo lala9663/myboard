@@ -3,6 +3,7 @@ package com.example.myboard.repository;
 import com.example.myboard.domain.Article;
 import com.example.myboard.domain.ArticleComment;
 import com.example.myboard.domain.QArticle;
+import com.example.myboard.repository.querydsl.ArticleRepositoryCustom;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.StringExpression;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import java.util.List;
 @RepositoryRestResource
 public interface ArticleRepository extends
         JpaRepository<Article, Long>,
+        ArticleRepositoryCustom,
         QuerydslPredicateExecutor<Article>, //기본적으로 이 entity에 있는 모든 검색 기능
         QuerydslBinderCustomizer<QArticle> {
 
