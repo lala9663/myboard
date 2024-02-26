@@ -19,17 +19,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 @AutoConfigureMockMvc
 @SpringBootTest
-public class DataRestTest {
+class DataRestTest {
 
     private final MockMvc mvc;
 
-    public DataRestTest(@Autowired MockMvc mvc) {
+    DataRestTest(@Autowired MockMvc mvc) {
         this.mvc = mvc;
     }
 
-    @DisplayName("{api} 게시글 리스트 조회")
+
+    @DisplayName("[api] 게시글 리스트 조회")
     @Test
-    void givenNoting_whenArticles_thenArticlesJsonResponse() throws Exception {
+    void givenNothing_whenRequestingArticles_thenReturnsArticlesJsonResponse() throws Exception {
         // Given
 
         // When & Then
@@ -38,9 +39,9 @@ public class DataRestTest {
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
 
-    @DisplayName("{api} 게시글 단건 조회")
+    @DisplayName("[api] 게시글 단건 조회")
     @Test
-    void givenNoting_whenRequestingArticles_thenReturnsArticlesJsonResponse() throws Exception {
+    void givenNothing_whenRequestingArticle_thenReturnsArticleJsonResponse() throws Exception {
         // Given
 
         // When & Then
@@ -49,9 +50,9 @@ public class DataRestTest {
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
 
-    @DisplayName("{api} 게시글 -> 댓글 리스트 조회")
+    @DisplayName("[api] 게시글 -> 댓글 리스트 조회")
     @Test
-    void givenNoting_whenRequestingArticlesCommentsFromArticle_thenReturnsArticlesCommentsJsonResponse() throws Exception {
+    void givenNothing_whenRequestingArticleCommentsFromArticle_thenReturnsArticleCommentsJsonResponse() throws Exception {
         // Given
 
         // When & Then
@@ -60,24 +61,24 @@ public class DataRestTest {
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
 
-    @DisplayName("{api} 댓글 리스트 조회")
+    @DisplayName("[api] 댓글 리스트 조회")
     @Test
-    void givenNoting_whenRequestingArticlesComments_thenReturnsArticlesCommentsJsonResponse() throws Exception {
+    void givenNothing_whenRequestingArticleComments_thenReturnsArticleCommentsJsonResponse() throws Exception {
         // Given
 
         // When & Then
-        mvc.perform(get("/api/articlesComments"))
+        mvc.perform(get("/api/articleComments"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
 
-    @DisplayName("{api} 댓글 단건 조회")
+    @DisplayName("[api] 댓글 단건 조회")
     @Test
-    void givenNoting_whenRequestingArticlesComment_thenReturnsArticlesCommentsJsonResponse() throws Exception {
+    void givenNothing_whenRequestingArticleComment_thenReturnsArticleCommentJsonResponse() throws Exception {
         // Given
 
         // When & Then
-        mvc.perform(get("/api/articlesComments/1"))
+        mvc.perform(get("/api/articleComments/1"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
@@ -95,4 +96,5 @@ public class DataRestTest {
         mvc.perform(delete("/api/userAccounts")).andExpect(status().isNotFound());
         mvc.perform(head("/api/userAccounts")).andExpect(status().isNotFound());
     }
+
 }
